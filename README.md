@@ -22,9 +22,10 @@ This repository provides a subgraph for the **MOG Token** on the Ethereum blockc
 
 This document provides example GraphQL queries for interacting with the **MOG Subgraph**. Use these queries to fetch data about transfers, holders, transaction limits, and more.
 
-```graphql
+
 # Recent Transfers
 # Retrieve the most recent token transfers on the MOG contract.
+```graphql
 {
   transfers(first: 5, orderBy: blockTimestamp, orderDirection: desc) {
     id
