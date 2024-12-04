@@ -18,13 +18,13 @@ This repository provides a subgraph for the **MOG Token** on the Ethereum blockc
 
 ---
 
-# Subgraph Example Queries**
+# Subgraph Example Queries
 
 This document provides example GraphQL queries for interacting with the **MOG Subgraph**. Use these queries to fetch data about transfers, holders, transaction limits, and more.
 
 
 # Recent Transfers
-# Retrieve the most recent token transfers on the MOG contract.
+### Retrieve the most recent token transfers on the MOG contract.
 ```graphql
 {
   transfers(first: 5, orderBy: blockTimestamp, orderDirection: desc) {
@@ -44,7 +44,8 @@ This document provides example GraphQL queries for interacting with the **MOG Su
 ```
 
 # Set Maximum Transaction Limit Events
-# Fetch events where the maximum transaction limit was updated.
+### Fetch events where the maximum transaction limit was updated.
+```graphql
 {
   set_MaxTXs(first: 5, orderBy: blockTimestamp, orderDirection: desc) {
     id
@@ -53,9 +54,11 @@ This document provides example GraphQL queries for interacting with the **MOG Su
     transactionHash
   }
 }
+```
 
 # Top Holders
-# List the top 10 holders of the MOG token, ordered by balance.
+### List the top 10 holders of the MOG token, ordered by balance.
+```graphql
 {
   users(first: 10, orderBy: balance, orderDirection: desc) {
     id
@@ -64,9 +67,11 @@ This document provides example GraphQL queries for interacting with the **MOG Su
     isExemptFromTxLimit
   }
 }
+```
 
 # Transfers Between Two Addresses
-# Retrieve all transfers between two specific addresses.
+### Retrieve all transfers between two specific addresses.
+```graphql
 {
   transfers(
     where: { from: "0xAddress1", to: "0xAddress2" }
@@ -79,9 +84,11 @@ This document provides example GraphQL queries for interacting with the **MOG Su
     transactionHash
   }
 }
+```
 
 # High-Value Transfers
-# Fetch all transfers with a value greater than 1 MOG (expressed in Wei).
+### Fetch all transfers with a value greater than 1 MOG (expressed in Wei).
+```graphql
 {
   transfers(where: { value_gt: "1000000000000000000" }, orderBy: value, orderDirection: desc) {
     id
@@ -95,9 +102,9 @@ This document provides example GraphQL queries for interacting with the **MOG Su
     blockTimestamp
   }
 }
+```
 
-
-### **Ownership History**
+# Ownership History
 ```graphql
 {
   ownershipTransferreds(orderBy: blockTimestamp, orderDirection: asc) {
@@ -108,3 +115,4 @@ This document provides example GraphQL queries for interacting with the **MOG Su
     transactionHash
   }
 }
+```
