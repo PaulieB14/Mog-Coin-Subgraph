@@ -43,19 +43,6 @@ This document provides example GraphQL queries for interacting with the **MOG Su
 }
 ```
 
-## Set Maximum Transaction Limit Events
-### Fetch events where the maximum transaction limit was updated.
-```graphql
-{
-  set_MaxTXs(first: 5, orderBy: blockTimestamp, orderDirection: desc) {
-    id
-    maxTX
-    blockTimestamp
-    transactionHash
-  }
-}
-```
-
 ## Top Holders
 ### List the top 10 holders of the MOG token, ordered by balance.
 ```graphql
