@@ -1,0 +1,129 @@
+# Ignore node_modules directory
+node_modules/
+
+# Ignore build directories
+dist/
+build/
+
+# Ignore cache directories
+.cache/
+cache/
+
+# Ignore WebAssembly files
+*.wasm
+
+# Ignore JavaScript source maps
+*.js.map
+
+# Ignore logs
+*.log
+
+# Ignore Graph CLI generated files
+generated/
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
+
+# Ignore IDE-specific files
+.vscode/
+.idea/
+
+# Ignore application-specific files
+*.zip
+*.asar
+*.framework
+*.app
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Ignore temporary files
+*.tmp
+*.temp
+*.swp
+*.bak
+*.old
+*.orig
+*.rej
+
+# Ignore system directories
+Library/Application Support/
+Library/Caches/
+Library/Containers/
+Library/Logs/
+Library/Preferences/
+Library/Saved Application State/
+Library/WebKit/
+Library/Assistant/
+Library/Contacts/
+Library/Metadata/
+Library/Spelling/
+Library/Spotlight/
+Library/Translation/
+Library/UnifiedAssetFramework/
+Library/com.apple.AppleMediaServices/
+Library/com.apple.appleaccountd/
+Library/com.apple.bluetooth.services.cloud/
+Library/com.apple.bluetoothuser/
+Library/com.apple.iTunesCloud/
+Library/com.apple.icloud.searchpartyd/
+Library/com.apple.internal.ck/
+Library/homeenergyd/
+Library/Finance/
+Library/FontCollections/
+Library/FrontBoard/
+Library/Google/
+Library/Group Containers/
+Library/HTTPStorages/
+Library/Intents/
+Library/KeyboardServices/
+Library/Keychains/
+Library/LanguageModeling/
+Library/Mobile Documents/
+Library/News/
+Library/PPM/
+Library/Passes/
+Library/PrivateCloudCompute/
+Library/ResponseKit/
+Library/Stickers/
+
+# Ignore other directories
+audius-protocol/
+clear/
+dev-rewards/
+dex-dashboard/
+documentation/
+dormant-dragons/
+erc20-substreams/
+gnosis-safe-subgraph/
+gnosis-safe-transactions/
+graph-registry-dashboard/
+livepeer-delegation-rewards/
+my-curation-dashboard/
+my-dashboard/
+my-subgraph-dashboard/
+paulies-grt-subraph/
+pauls-grt-subgraph/
+polymarket-real-time-markets/
+requestNetwork/
+safe-transactions---gnosis/
+silo-dashboard/
+stakedotlink-stlink-subgraph/
+stlink/
+web3index/
+
+# Ignore specific files
+*.json
+*.md
+*.patch
+
+# Ignore generated directories
+build/
+dist/
+generated/
+
+# Ignore any temporary or cache files
+*.tmp
+*.cache

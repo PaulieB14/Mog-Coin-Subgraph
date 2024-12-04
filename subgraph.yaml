@@ -1,0 +1,65 @@
+specVersion: 1.0.0
+indexerHints:
+  prune: auto
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: MOG
+    network: mainnet
+    source:
+      address: "0xaaeE1A9723aaDB7afA2810263653A34bA2C21C7a"
+      abi: MOG
+      startBlock: 17731591
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - Approval
+        - AutoLiquify
+        - ClearStuck
+        - ClearToken
+        - EditTax
+        - OwnershipTransferred
+        - Transfer
+        - set_MaxTX
+        - set_MaxWallet
+        - set_Receivers
+        - set_SwapBack
+        - user_TxExempt
+        - user_exemptfromfees
+        - User
+        - ContractInfo
+        - ParameterUpdate
+      abis:
+        - name: MOG
+          file: ./abis/MOG.json
+      eventHandlers:
+        - event: Approval(indexed address,indexed address,uint256)
+          handler: handleApproval
+        - event: AutoLiquify(uint256,uint256)
+          handler: handleAutoLiquify
+        - event: ClearStuck(uint256)
+          handler: handleClearStuck
+        - event: ClearToken(address,uint256)
+          handler: handleClearToken
+        - event: EditTax(uint8,uint8,uint8)
+          handler: handleEditTax
+        - event: OwnershipTransferred(indexed address,indexed address)
+          handler: handleOwnershipTransferred
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+        - event: set_MaxTX(uint256)
+          handler: handleSetMaxTX
+        - event: set_MaxWallet(uint256)
+          handler: handleset_MaxWallet
+        - event: set_Receivers(address,address,address,address)
+          handler: handleset_Receivers
+        - event: set_SwapBack(uint256,bool)
+          handler: handleset_SwapBack
+        - event: user_TxExempt(address,bool)
+          handler: handleUserTxExempt
+        - event: user_exemptfromfees(address,bool)
+          handler: handleUserExemptFromFees
+      file: ./src/mog.ts

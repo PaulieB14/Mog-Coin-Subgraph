@@ -1,0 +1,144 @@
+type Approval @entity(immutable: true) {
+  id: Bytes!
+  owner: Bytes! # Address
+  spender: Bytes! # Address
+  value: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type AutoLiquify @entity(immutable: true) {
+  id: Bytes!
+  amountETH: BigInt! # uint256
+  amountTokens: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type ClearStuck @entity(immutable: true) {
+  id: Bytes!
+  amount: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type ClearToken @entity(immutable: true) {
+  id: Bytes!
+  TokenAddressCleared: Bytes! # Address
+  Amount: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type EditTax @entity(immutable: true) {
+  id: Bytes!
+  Buy: Int! # uint8
+  Sell: Int! # uint8
+  Transfer: Int! # uint8
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type OwnershipTransferred @entity(immutable: true) {
+  id: Bytes!
+  previousOwner: Bytes! # Address
+  newOwner: Bytes! # Address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type Transfer @entity(immutable: true) {
+  id: Bytes!
+  from: User! # Linked to User
+  to: User! # Linked to User
+  value: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type set_MaxTX @entity(immutable: true) {
+  id: Bytes!
+  maxTX: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type set_MaxWallet @entity(immutable: true) {
+  id: Bytes!
+  maxWallet: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type set_Receivers @entity(immutable: true) {
+  id: Bytes!
+  marketingFeeReceiver: Bytes! # Address
+  buybackFeeReceiver: Bytes! # Address
+  burnFeeReceiver: Bytes! # Address
+  devFeeReceiver: Bytes! # Address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type set_SwapBack @entity(immutable: true) {
+  id: Bytes!
+  Amount: BigInt! # uint256
+  Enabled: Boolean! # Bool
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type user_TxExempt @entity(immutable: true) {
+  id: Bytes!
+  Wallet: Bytes! # Address
+  Exempt: Boolean! # Bool
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type user_exemptfromfees @entity(immutable: true) {
+  id: Bytes!
+  Wallet: Bytes! # Address
+  Exempt: Boolean! # Bool
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type User @entity {
+  id: Bytes! # Address
+  balance: BigInt! # Derived from Transfer events
+  isExemptFromFees: Boolean!
+  isExemptFromTxLimit: Boolean!
+  transfersSent: [Transfer!]! @derivedFrom(field: "from")
+  transfersReceived: [Transfer!]! @derivedFrom(field: "to")
+}
+
+type ContractInfo @entity {
+  id: ID! # Singleton: "contract-info"
+  name: String!
+  symbol: String!
+  decimals: Int!
+  totalSupply: BigInt!
+}
+
+type ParameterUpdate @entity(immutable: true) {
+  id: Bytes!
+  parameter: String! # maxTX, maxWallet, etc.
+  value: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
