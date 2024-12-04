@@ -1,6 +1,5 @@
 # **MOG Subgraph Documentation**
 
----
 
 This repository provides a subgraph for the **MOG Token** on the Ethereum blockchain. The subgraph indexes and exposes blockchain data for activities related to the MOG token, including transfers, approvals, ownership changes, fee exemptions, and more. This data is valuable for analytics, transparency, and understanding token interactions.
 
@@ -19,7 +18,7 @@ This repository provides a subgraph for the **MOG Token** on the Ethereum blockc
 
 ---
 
-# **MOG Subgraph Example Queries**
+# Subgraph Example Queries**
 
 This document provides example GraphQL queries for interacting with the **MOG Subgraph**. Use these queries to fetch data about transfers, holders, transaction limits, and more.
 
@@ -41,6 +40,7 @@ This document provides example GraphQL queries for interacting with the **MOG Su
     transactionHash
   }
 }
+```
 
 # Set Maximum Transaction Limit Events
 # Fetch events where the maximum transaction limit was updated.
