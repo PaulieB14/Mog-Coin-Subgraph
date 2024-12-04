@@ -23,7 +23,7 @@ This repository provides a subgraph for the **MOG Token** on the Ethereum blockc
 This document provides example GraphQL queries for interacting with the **MOG Subgraph**. Use these queries to fetch data about transfers, holders, transaction limits, and more.
 
 
-# Recent Transfers
+## Recent Transfers
 ### Retrieve the most recent token transfers on the MOG contract.
 ```graphql
 {
@@ -43,7 +43,7 @@ This document provides example GraphQL queries for interacting with the **MOG Su
 }
 ```
 
-# Set Maximum Transaction Limit Events
+## Set Maximum Transaction Limit Events
 ### Fetch events where the maximum transaction limit was updated.
 ```graphql
 {
@@ -56,7 +56,7 @@ This document provides example GraphQL queries for interacting with the **MOG Su
 }
 ```
 
-# Top Holders
+## Top Holders
 ### List the top 10 holders of the MOG token, ordered by balance.
 ```graphql
 {
@@ -69,7 +69,7 @@ This document provides example GraphQL queries for interacting with the **MOG Su
 }
 ```
 
-# Transfers Between Two Addresses
+## Transfers Between Two Addresses
 ### Retrieve all transfers between two specific addresses.
 ```graphql
 {
@@ -86,7 +86,7 @@ This document provides example GraphQL queries for interacting with the **MOG Su
 }
 ```
 
-# High-Value Transfers
+## High-Value Transfers
 ### Fetch all transfers with a value greater than 1 MOG (expressed in Wei).
 ```graphql
 {
@@ -104,7 +104,7 @@ This document provides example GraphQL queries for interacting with the **MOG Su
 }
 ```
 
-# Ownership History
+## Ownership History
 ```graphql
 {
   ownershipTransferreds(orderBy: blockTimestamp, orderDirection: asc) {
